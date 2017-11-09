@@ -8,6 +8,10 @@
     						"u", "v", "w", "x",
     						"y", "z"];
 
+    var countDown = 10; 
+    var myScore = 0;  
+    var start = computerChoices;    
+
     // This function is run whenever the user presses a key.
     document.onkeyup = function(event) {
 
@@ -19,14 +23,25 @@
       var computerGuess = computerChoices[Math.floor(Math.random() * computerChoices.length)];
       console.log(computerGuess)
 
+    
       // displays the key the user pressed (userGuess).
     	document.getElementById("docLetters").innerHTML = userGuess;
+      if (userGuess == computerGuess) {
+        alert("you win");
+        userGuess ++;
+        function start(){
+          Program.restart();
+        }
+        }
+        console.log(start)
+
 
     	//conditions
 
 
     	if (userGuess === computerGuess) {
        document.getElementById("docWin").innerHTML = +1
+
         }
 
     };
